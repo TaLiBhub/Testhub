@@ -9,6 +9,10 @@ echo "Введіть друге число: ";
 
 $num2 = trim(fgets(STDIN)); // Читаємо друге число
 
+
+
+
 // Виконуємо обчислення
-$result = $num1 + $num2;
+$result = $num1 * $num2;
+
 echo "Результат: $result\n";
