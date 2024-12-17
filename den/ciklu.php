@@ -20,18 +20,40 @@
 //     }
 // }
 // sortir($n);
-function sortir(){
-    for ($number = 1; $number <= 10; $number++) {
-        if($number % 2 === 0) {
-            echo "$number четное\n";
-        }else {
-            echo "$number nechetnoe\n";
-        }
-    } 
+// function sortir(){
+//     for ($number = 1; $number <= 10; $number++) {
+//         if($number % 2 === 0) {
+//             echo "$number четное\n";
+//         }else {
+//             echo "$number nechetnoe\n";
+//         }
+//     } 
+// }
+// sortir();
+
+// 8. Работа с массивами
+// Создай массив из 5 чисел. Найди и выведи:
+//  • сумму всех чисел;
+//  • максимальное число;
+//  • минимальное число
+
+
+function sortir($a) {
+   $sum = array_sum($a);
+    sort($a);
+    $max = end($a);
+    $min = $a[1];
+  return [
+   'Сумма' => $sum, 
+   'Max' => $max,
+   'Minimal' => $min
+  ];
 }
-sortir();
 
 
+$num1 = [3, 1, 5, 7, 4];
+
+print_r(sortir($num1));
 
 
 
