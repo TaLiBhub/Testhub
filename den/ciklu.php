@@ -38,22 +38,22 @@
 //  • минимальное число
 
 
-function sortir($a) {
-   $sum = array_sum($a);
-    sort($a);
-    $max = end($a);
-    $min = $a[1];
-  return [
-   'Сумма' => $sum, 
-   'Max' => $max,
-   'Minimal' => $min
-  ];
-}
+// function sortir($a) {
+//    $sum = array_sum($a);
+//     sort($a);
+//     $max = end($a);
+//     $min = $a[1];
+//   return [
+//    'Сумма' => $sum, 
+//    'Max' => $max,
+//    'Minimal' => $min
+//   ];
+// }
 
 
-$num1 = [3, 1, 5, 7, 4];
+// $num1 = [3, 1, 5, 7, 4];
 
-print_r(sortir($num1));
+// print_r(sortir($num1));
 
 
 
