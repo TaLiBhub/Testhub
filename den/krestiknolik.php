@@ -9,17 +9,12 @@ $board = [
 $currentUser = 'X';
 $gameStatus = true;
 
-
-
 function showBoard($board) {
     foreach ($board as $row) {
         echo implode('|', $row) . PHP_EOL;
     }
     echo PHP_EOL;
 }
-
-
-
 
 function checkWinner($board, $user) {
     for ($i = 0; $i < 3; $i++) {
@@ -37,7 +32,6 @@ function checkWinner($board, $user) {
         return true;
     }
     return false;
-
 
 }
 
@@ -74,7 +68,7 @@ while($gameStatus) {
         echo "Ничья" . PHP_EOL;
         $gameStatus = false;
     }else {
-        $currentUser = $currentUser === "X" ? "O" : "X";
+        $currentUser = $currentUser === "O" ? "X" : "O";
     }
 }
 
