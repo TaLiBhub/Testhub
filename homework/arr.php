@@ -15,34 +15,91 @@
 // $a = [1, 2, 2, 3, 4, 4, 5];
 // print_r(uniqe($a));
 
-function arrUniqe($arr) {
-    $uniq = [];
-    for($i = 0; $i < count($arr); $i++) {
-        if(!in_array($arr[$i], $uniq, true)) {
-            $uniq[] = $arr[$i];
+// function arrUniqe($arr) {
+//     $uniq = [];
+//     for($i = 0; $i < count($arr); $i++) {
+//         if(!in_array($arr[$i], $uniq, true)) {
+//             $uniq[] = $arr[$i];
            
             
-        }
-    } 
-        return $uniq;
+//         }
+//     } 
+//         return $uniq;
+// }
+// $a = [1, 2, 2, 3, 4, 4, 5];
+// print_r(arrUniqe($a));
+
+// Напиши функцию, которая принимает массив и возвращает новый массив
+// элементы которого идут в обратном порядке.
+
+
+
+// function sorted($ar) {
+//     $n = count($ar);
+//    for($i = 0; $i < $n; $i++) {
+//     for($g = 0; $g < $n - $i - 1; $g++) {
+//         if($ar[$g] > $ar[$g + 1]) {
+//             [$ar[$g], $ar[$g + 1]] = [$ar[$g + 1], $ar[$g]];
+//         }
+//     }
+// }
+// return $ar;
+// }
+// $v = [5, 3, 1, 4, 2];
+// print_r(sorted($v));
+
+// 1. Сложение чисел
+// Напишите функцию, которая принимает два числа и возвращает их сумму. 
+// Если оба числа отсутствуют, функция должна возвращать 0.
+
+// function sum($a = 0, $b = 0) {
+//     return $a + $b;
+// }
+
+// echo sum();
+ 
+
+
+// 2. Переворот строки
+// Напишите функцию, которая принимает строку и возвращает её в обратном порядке.
+
+// function reverseString($str) {
+//     $a = strrev($str);
+//     return $a;
+// }
+
+// echo reverseString("hello");
+
+// function reverseString($str) {
+//    $reversed = "";
+//     for($i = strlen($str) - 1; $i >= 0; $i--) {
+//         $reversed .= $str[$i];
+//     }
+//     return $reversed;
+// }
+
+// echo reverseString("hello");
+
+
+
+// Найти максимальное число в массиве
+// Напишите функцию, которая принимает массив чисел и возвращает максимальное значение.
+// Если массив пустой, функция должна вернуть null.
+
+
+// Найти максимальное число в массиве
+// Напишите функцию, которая принимает массив чисел и возвращает максимальное значение.
+// Если массив пустой, функция должна вернуть null.
+
+function findMax($numbers) {
+    
+    if (empty($numbers)) {
+        return "null";
+    }
+     return max($numbers);
 }
-$a = [1, 2, 2, 3, 4, 4, 5];
-print_r(arrUniqe($a));
 
+$a = [1, 5, 3, 9, 2];
+$b = []; 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+echo findMax([1, 5, 3, 9, 2]);
