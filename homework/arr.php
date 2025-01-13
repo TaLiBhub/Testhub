@@ -91,15 +91,92 @@
 // Напишите функцию, которая принимает массив чисел и возвращает максимальное значение.
 // Если массив пустой, функция должна вернуть null.
 
-function findMax($numbers) {
+// function findMax($numbers) {
     
-    if (empty($numbers)) {
-        return "null";
+//     if (empty($numbers)) {
+//         return "null";
+//     }
+//      return max($numbers);
+// }
+
+// $a = [1, 5, 3, 9, 2];
+// $b = []; 
+
+// echo findMax([1, 5, 3, 9, 2]);
+
+
+// 4. Чётные числа из массива
+// Напишите функцию, которая принимает массив чисел и возвращает массив только с чётными числами.
+
+// function filterEvenNumbers($numbers) {
+//      return array_filter($numbers, function($num) {
+//      return $num % 2 === 0;
+//      });
+// }
+// $a = [1, 2, 3, 4, 5, 6];
+
+// print_r(filterEvenNumbers($a));
+
+
+// function getEvenNumbers($numbers) {
+//     $evenNumbers = []; 
+//     for ($i = 0; $i < count($numbers); $i++) {
+//         if ($numbers[$i] % 2 === 0) { 
+//             $evenNumbers[] = $numbers[$i]; 
+//          }
+//     }
+//     return $evenNumbers; 
+// }
+
+
+// $array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// $evenNumbers = getEvenNumbers($array);
+
+// print_r($evenNumbers);
+
+
+// 1 . линейный поиск , нужно  найти число в массиве чисел без использования методов массива
+
+
+// function lianeArr($array, $num) {
+//     $oper = 0; 
+//     for($i = 0; $i < count($array); $i++) {
+//         $oper++;
+//         if($array[$i] === $num) {
+//             echo "Количество операций: $oper\n";
+//             return $i;
+//         }
+//     }
+//     return -1;
+// }
+
+// $ar = [1, 3, 5, 7, 9, 11, 13, 15, 23, 65, 78 ,99, 100];
+// print_r(lianeArr($ar, 78));
+
+
+// бинарный поиск , найти елемент в массиве , делением массива пополам
+
+function binance($arr, $target) {
+    $start = 0;
+    $end = count($arr) -1;
+    $oper = 0;
+
+    while($start <= $end) {
+        $midle = floor(($start + $end) / 2);
+        $oper++; 
+        if($arr[$midle] === $target) {
+            echo "Количество операций: $oper\n";
+            return $midle;
+        }elseif($arr[$midle] < $target) {
+            $start = $midle + 1;
+        }else {
+            $end = $midle -1;
+        }
     }
-     return max($numbers);
+    echo "Kolvo: $oper\n";
+    return -1;
+
 }
+$ar = [1, 3, 5, 7, 9, 11, 13, 15, 23, 65, 78 ,99, 100];
 
-$a = [1, 5, 3, 9, 2];
-$b = []; 
-
-echo findMax([1, 5, 3, 9, 2]);
+print_r(binance($ar, 78));
