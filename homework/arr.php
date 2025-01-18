@@ -156,27 +156,82 @@
 
 // бинарный поиск , найти елемент в массиве , делением массива пополам
 
-function binance($arr, $target) {
-    $start = 0;
-    $end = count($arr) -1;
-    $oper = 0;
+// function binance($arr, $target) {
+//     $start = 0;
+//     $end = count($arr) -1;
+//     $oper = 0;
 
-    while($start <= $end) {
-        $midle = floor(($start + $end) / 2);
-        $oper++; 
-        if($arr[$midle] === $target) {
-            echo "Количество операций: $oper\n";
-            return $midle;
-        }elseif($arr[$midle] < $target) {
-            $start = $midle + 1;
-        }else {
-            $end = $midle -1;
-        }
+//     while($start <= $end) {
+//         $midle = floor(($start + $end) / 2);
+//         $oper++; 
+//         if($arr[$midle] === $target) {
+//             echo "Количество операций: $oper\n";
+//             return $midle;
+//         }elseif($arr[$midle] < $target) {
+//             $start = $midle + 1;
+//         }else {
+//             $end = $midle -1;
+//         }
+//     }
+//     echo "Kolvo: $oper\n";
+//     return -1;
+
+// }
+// $ar = [1, 3, 5, 7, 9, 11, 13, 15, 23, 65, 78 ,99, 100];
+
+// print_r(binance($ar, 78));
+
+
+// Напишите функцию, которая разворачивает строку без использования встроенных методов для этого.
+
+// function reverseString($str) {
+//     $revers = [];
+//     $split = str_split($str);
+//     for($i = count($split) - 1; $i >= 0; $i--) {
+//         $revers[] = $split[$i];
+//     }  
+    
+//     return join("", $revers);
+   
+// }
+// print_r (reverseString("hello")); //olleh
+
+
+
+// Напиши функцию которая принимает массив чисел и удаляет все дубикаты.[1, 2, 3, 43, 4, 5, 5]
+
+
+// $a = [1, 2, 3, 43, 4, 5, 5];
+// function arrayUniq($arr) {
+//     $uniq = [];
+
+//     for($i = 0; $i < count($arr); $i++) {
+//         if(!in_array($arr[$i], $uniq)) {
+//             $uniq[] = $arr[$i];
+//         }
+
+
+//     } return $uniq;
+
+
+// }
+// print_r(arrayUniq($a));
+
+
+// Функция принимает массив чисел и возвращает второе по величине число. [1,2,10,21,95,4,65]
+// Сделать проверку если длинна массива меньше 2-х элементов, вернуть -1
+
+function secondmaxValue($arr) {
+
+    if(count($arr) < 2 ) {
+        return -1;
     }
-    echo "Kolvo: $oper\n";
-    return -1;
-
+     usort($arr, function($a, $b){
+        return $b <=> $a;
+    });
+    return $arr[1];
 }
-$ar = [1, 3, 5, 7, 9, 11, 13, 15, 23, 65, 78 ,99, 100];
 
-print_r(binance($ar, 78));
+$a = [1,2,10,21,95,4, 65, 65];
+
+print_r(secondmaxValue($a));
