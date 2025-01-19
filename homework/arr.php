@@ -221,17 +221,109 @@
 // Функция принимает массив чисел и возвращает второе по величине число. [1,2,10,21,95,4,65]
 // Сделать проверку если длинна массива меньше 2-х элементов, вернуть -1
 
-function secondmaxValue($arr) {
+// function secondmaxValue($arr) {
 
-    if(count($arr) < 2 ) {
-        return -1;
+//     if(count($arr) < 2 ) {
+//         return -1;
+//     }
+//      usort($arr, function($a, $b){
+//         return $b <=> $a;
+//     });
+//     return $arr[1];
+// }
+
+// $a = [1,2,10,21,95,4, 65, 65];
+
+// print_r(secondmaxValue($a));
+
+
+// 4. Подсчёт частоты слов в строке
+// Напишите функцию, которая принимает строку и возвращает количество каждого слова в строке.
+
+
+// function wordFrequency($str) {
+ 
+//     $words = explode(' ', $str);
+//     $wordCount = [];
+
+//     foreach ($words as $word) {
+//         if ($word !== '') {
+//             if (isset($wordCount[$word])) {
+//                 $wordCount[$word]++;
+//             } else {
+//                 $wordCount[$word] = 1;
+//             }
+//         }
+//     }
+
+//     return $wordCount;
+// }
+
+
+// $string = "hello world hello php world hello";
+// print_r(wordFrequency($string));
+
+// function wordFrequency($str) {
+//     $words = explode(' ', $str);
+//     return array_count_values($words);
+// }
+
+// $string = "hello world hello php world hello";
+// print_r(wordFrequency($string));
+
+
+
+// 5. Факториал числа
+// Создайте функцию, которая вычисляет факториал числа (произведение всех чисел от 1 до заданного).
+
+// function factorial($n) {
+//     if($n <= 1) {
+//         return 1;
+//     } 
+//     return $n * factorial($n - 1);
+
+// }
+
+// echo factorial(5);
+
+// // [1,1,2,3,5]
+
+// $a = 10;
+// $b = 20;
+ 
+// // $a = $b - $a ; 
+// // $b = $b - $a ;
+// // $a = $a + $a;
+
+// [$a, $b] = [$b, $a];
+
+// echo $a . "\n";
+// echo $b . "\n";
+
+
+
+// $slovo = "The quick brown fox";
+// function longerStr($str) {
+//     $words = explode(' ', $str);
+
+//     usort($words, function($a, $b) {
+//         return strlen($b) - strlen($a);
+//     });
+//     return $words [0];
+// }
+
+// echo longerStr($slovo);
+
+
+$num = [1, 2, 4];
+
+function rever($rev) {
+    $arrReverse = [];
+    for($i = count($rev) - 1; $i >= 0; $i--) {
+        $arrReverse[] = $rev[$i];
     }
-     usort($arr, function($a, $b){
-        return $b <=> $a;
-    });
-    return $arr[1];
+    return $arrReverse;
 }
 
-$a = [1,2,10,21,95,4, 65, 65];
 
-print_r(secondmaxValue($a));
+print_r(rever($num));
