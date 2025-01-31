@@ -47,7 +47,7 @@ function temperatura($temp){
     }
     
 }
-// echo temperatura(20);
+echo temperatura(20);
 
 
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once "servises/noteService.php";
+require_once "servises/noteService";
 
 class NoteController {
     private $noteService;
@@ -50,8 +50,8 @@ class NoteController {
         http_response_code(200);
         echo json_encode([
             "status" => 200,
-            "message" => "Notes Retrieved",
-            "data" => ["notes" => $notes] 
+            "message" => "All notes",
+            "data" => $notes
         ]);
     }
     

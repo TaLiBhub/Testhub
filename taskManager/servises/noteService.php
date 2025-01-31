@@ -22,11 +22,11 @@ class NoteService {
 
     public function getNotes() {
         if (file_exists('notes.json')) {
-            $this->notes = json_decode(file_get_contents('notes.json'), true); // Читаем из файла
+            $this->notes = json_decode(file_get_contents('notes.json'), true); 
         }
         return $this->notes;
     }
-    
+
     private function jsonResponse($message, $data = [], $status = 200) {
         return json_encode([
             "status" => $status,

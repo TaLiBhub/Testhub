@@ -315,15 +315,76 @@
 // echo longerStr($slovo);
 
 
-$num = [1, 2, 4];
+// $num = [1, 2, 4];
 
-function rever($rev) {
-    $arrReverse = [];
-    for($i = count($rev) - 1; $i >= 0; $i--) {
-        $arrReverse[] = $rev[$i];
-    }
-    return $arrReverse;
-}
+// function rever($rev) {
+//     $arrReverse = [];
+//     for($i = count($rev) - 1; $i >= 0; $i--) {
+//         $arrReverse[] = $rev[$i];
+//     }
+//     return $arrReverse;
+// }
 
 
-print_r(rever($num));
+// print_r(rever($num));
+
+// Палиндром: Напиши функцию, которая проверяет, является ли строка палиндромом.
+// preg_replace("/[^a-z0-9]/i", "", $str) - regulaka
+
+// function polindrome($str) {
+//     $strlower = strtolower($str);
+//     return $strlower == strrev($str);
+// }
+// print_r(polindrome("asa"));
+// // var_dump(polindrome("asa,asa"));
+
+
+// Факториал: Реализуй функцию для вычисления факториала числа.
+
+// function factorial($num) {
+//     if($num <= 1 ) {
+//         return $num;
+//     }
+//     return $num * factorial($num - 1);
+// } 
+// echo factorial(5);
+
+
+// class Animals {
+//     function step($int) {
+//         return $int;
+//     }
+//     function voice() {
+
+//     }
+//     function site() {
+
+//     }
+// }  
+
+
+
+// class Dog extends Animals {
+//     function step($int) {
+//         return $int;
+//     }
+//     function voice() {
+
+//     }
+//     function site() {
+
+//     }
+// } 
+// class Bird extends Animals {
+//     function step($int) {
+//         return $int;
+//     }
+//     function voice() {
+
+//     }
+//     function site() {
+
+//     }
+// }
+// $user =  new Animals();
+// echo $user->step(5);

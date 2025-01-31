@@ -1,23 +1,23 @@
 <?php
-// // Функція для виконання обчислень
-// function calculate($num1, $num2, $operation) {
-//     switch($operation) {
-//         case '+':
-//             return $num1 + $num2;
-//         case '-':
-//             return $num1 - $num2;
-//         case '*':
-//             return $num1 * $num2;
-//         case '/':
-//             if ($num2 != 0) {
-//                 return $num1 / $num2;
-//             } else {
-//                 return "Помилка: ділення на нуль";
-//             }
-//         default:
-//             return "Невідома операція";
-//     }
-// }
+// Функція для виконання обчислень
+function calculate($num1, $num2, $operation) {
+    switch($operation) {
+        case '+':
+            return $num1 + $num2;
+        case '-':
+            return $num1 - $num2;
+        case '*':
+            return $num1 * $num2;
+        case '/':
+            if ($num2 != 0) {
+                return $num1 / $num2;
+            } else {
+                return "Помилка: ділення на нуль";
+            }
+        default:
+            return "Невідома операція";
+    }
+}
 
 // // Основна програма
 // echo "Консольний калькулятор\n";
@@ -37,26 +37,26 @@
 
 // '+','-','/','*'
 
-class ManyFunk {
-    function calc($number1, $operator, $number2){
-        if($operator == '+') {
-            return $number1 + $number2;
-        }elseif($operator == '-') {
-            return $number1 - $number2;
-        }elseif($operator == '/') {
-            if($number2 !== 0 ) {
-                return $number1 / $number2;
-            }else {
-                return "Не можем";
-            }
-        }elseif($operator == '*') {
-            return $number1 * $number2;
-        }
-    }
-    function calc2() {
-        return "shamal";
+// class ManyFunk {
+//     function calc($number1, $operator, $number2){
+//         if($operator == '+') {
+//             return $number1 + $number2;
+//         }elseif($operator == '-') {
+//             return $number1 - $number2;
+//         }elseif($operator == '/') {
+//             if($number2 !== 0 ) {
+//                 return $number1 / $number2;
+//             }else {
+//                 return "Не можем";
+//             }
+//         }elseif($operator == '*') {
+//             return $number1 * $number2;
+//         }
+//     }
+//     function calc2() {
+//         return "shamal";
         
-    }
-} 
-$manyfunk = new ManyFunk;
-echo $manyfunk->calc2();
+//     }
+// } 
+// $manyfunk = new ManyFunk;
+// echo $manyfunk->calc2();
