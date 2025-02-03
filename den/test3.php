@@ -60,58 +60,59 @@
 class FileManager {
     private $filename;
 
-
     public function __construct($filename) {
         $this->filename = $filename;
     }
 
     public function readFile() {
-        $read = file($this->filename);
-        return $read;
-    } 
+        
+        return file($this->filename, FILE_IGNORE_NEW_LINES); 
+    }
 
     public function getSumAge() {
         $users = $this->readFile();
-        return array_reduce($users, function($sum, $user){
-            $data = str_getcsv($user); 
+      
+
+        return array_reduce($users, function($sum, $user) {
+            
+            $data = explode(',', $user); 
             if (isset($data[1])) {
                 $sum += (int)$data[1]; 
             }
             return $sum;
-        },0);
-       
+        }, 0);
     }
 
     public function middleAge() {
         $users = $this->readFile();
-        array_shift($users);
 
         $ages = array_map(function($user) {
-            $data = str_getcsv($user);
-            $age = 0;
-            if (isset($data[1])) {
-                $age = (int)$data[1]; 
-            }
-            return $age;
+         
+            $data = explode(',', $user);
+            return isset($data[1]) ? (int)$data[1] : 0; 
         }, $users);
+
         if (count($ages) > 0) {
             return array_sum($ages) / count($ages);
         }
         return 0;
     }
+    
 
-    public function addNote($name, $age) {
+    public function addRow($name, $age) {
         $newLine = "$name,$age\n";
-        file_put_contents($this->filename, $newLine, FILE_APPEND);
+        file_put_contents($this->filename, $newLine, FILE_APPEND); 
     }
+    
 
     public function deleteByName($name) {
         $users = $this->readFile();
         $filtered = array_filter($users, function ($user) use ($name) {
-         
+            
             if (!is_string($user)) {
                 return true; 
             }
+    
             $data = str_getcsv($user, ',', '"', '\\');
     
             if (isset($data[0])) {
@@ -122,14 +123,12 @@ class FileManager {
     
         file_put_contents($this->filename, implode("", $filtered));
     }
-    
-    
-
 }
-$filemanager = new FileManager("den/test3.txt");
-// print_r($filemanager->readFile());
-// print_r($filemanager->getsumAge());
-// print_r($filemanager->middleAge());
-//  $filemanager->addNote("habib", "40");
 
-print $filemanager->deleteByName("Den");
+
+$filemanager = new FileManager("den/test3.txt");
+// print_r($filemanager->readCSV());
+// echo $filemanager->getSumAge();
+// echo($filemanager->middleAge());
+//  $filemanager->addRow("Habib", "20");
+print $filemanager->deleteByName("Habib");

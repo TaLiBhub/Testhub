@@ -1,3 +1,1 @@
-name,age
-           Oleg,27
-habib,40
+Sashko,20
