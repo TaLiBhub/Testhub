@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json');
+// header('Content-Type: application/json');
 
 require_once 'record.php';
 
@@ -11,5 +11,5 @@ $manager = new UpdateAndSave('data.json');
 
 $res = $manager->saveData($input['name'], $input['record']);
 
-echo json_encode($res);
+
 
