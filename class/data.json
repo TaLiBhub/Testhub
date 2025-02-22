@@ -1,0 +1,22 @@
+[
+    {
+        "albumName": "Random Access Memories",
+        "author": "Daft Punk",
+        "year": 2013,
+        "listSound": [
+            "Give Life Back to Music",
+            "Instant Crush",
+            "Contact"
+        ]
+    },
+    {
+        "albumName": "Discovery",
+        "author": "Daft Punk",
+        "year": 2001,
+        "listSound": [
+            "One More Time",
+            "Harder, Better, Faster, Stronger",
+            "Digital Love"
+        ]
+    }
+]
