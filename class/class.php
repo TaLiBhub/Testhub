@@ -341,82 +341,86 @@
     
 // }
 
-class MusicCollection {
-    public $fileName;
+// class MusicCollection {
+//     public $fileName;
 
-    public function __construct($fileName = 'data.json') {
-        $this->fileName = $fileName;
-    }
+//     public function __construct($fileName = 'data.json') {
+//         $this->fileName = $fileName;
+//     }
 
-    public function addAlbum($albumName, $author, $year, $listSound) {
-        $readFile = json_decode(file_get_contents($this->fileName), true);
-        $readFile[] = [
-                'albumName' => $albumName,
-                'author' => $author,
-                'year' => $year,
-                'listSound' => $listSound  
-            ];
+//     public function addAlbum($albumName, $author, $year, $listSound) {
+//         $readFile = json_decode(file_get_contents($this->fileName), true);
+//         $readFile[] = [
+//                 'albumName' => $albumName,
+//                 'author' => $author,
+//                 'year' => $year,
+//                 'listSound' => $listSound  
+//             ];
 
-        file_put_contents($this->fileName, json_encode($readFile, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
-    }     
+//         file_put_contents($this->fileName, json_encode($readFile, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+//     }     
 
-    public function deleteAlbum($albumName) { 
-        $readFile = json_decode(file_get_contents($this->fileName), true);
-            foreach($readFile as $key => $item) {
-                if($item['albumName'] === $albumName) {
-                    unset($readFile[$key]);
-                    file_put_contents($this->fileName, json_encode($readFile, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
-                }
-            }
-        }
+//     public function deleteAlbum($albumName) { 
+//         $readFile = json_decode(file_get_contents($this->fileName), true);
+//             foreach($readFile as $key => $item) {
+//                 if($item['albumName'] === $albumName) {
+//                     unset($readFile[$key]);
+//                     file_put_contents($this->fileName, json_encode($readFile, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+//                 }
+//             }
+//         }
 
-        public function showAllalbums() {
-            $readFile = json_decode(file_get_contents($this->fileName), true);
+//         public function showAllalbums() {
+//             $readFile = json_decode(file_get_contents($this->fileName), true);
         
-            echo "Альбомы в плейлисте:\n";
-            foreach ($readFile as $key => $item) {
+//             echo "Альбомы в плейлисте:\n";
+//             foreach ($readFile as $key => $item) {
                
-                $songs = implode(", ", $item['listSound']);
-                echo ($key + 1) . ". Альбом: {$item['albumName']} | Автор: {$item['author']} | Год: {$item['year']} | Список песен: $songs \n";
-            }
-        }
+//                 $songs = implode(", ", $item['listSound']);
+//                 echo ($key + 1) . ". Альбом: {$item['albumName']} | Автор: {$item['author']} | Год: {$item['year']} | Список песен: $songs \n";
+//             }
+//         }
         
-        public function addSongToAlbum($albumName, $song) {
+//         public function addSongToAlbum($albumName, $song) {
 
-            $readFile = json_decode(file_get_contents($this->fileName), true);
+//             $readFile = json_decode(file_get_contents($this->fileName), true);
         
-            foreach ($readFile as $key => $album) {
+//             foreach ($readFile as $key => $album) {
                 
-                if ($album['albumName'] === $albumName) {
+//                 if ($album['albumName'] === $albumName) {
                     
-                    $readFile[$key]['listSound'][] = $song;
+//                     $readFile[$key]['listSound'][] = $song;
         
-                    file_put_contents($this->fileName, json_encode($readFile, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
-                    echo "Песня '{$song}' успешно добавлена в альбом '{$albumName}'.\n";
-                    return;
-                }
-            }
-         }
+//                     file_put_contents($this->fileName, json_encode($readFile, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+//                     echo "Песня '{$song}' успешно добавлена в альбом '{$albumName}'.\n";
+//                     return;
+//                 }
+//             }
+//          }
 
-         public function findAlbumsByAuthor($author) {
-            $readFile = json_decode(file_get_contents($this->fileName), true);
-            $albums = array_filter($readFile, fn($album) => strcasecmp($album['author'], $author) === 0);
+//          public function findAlbumsByAuthor($author) {
+//             $readFile = json_decode(file_get_contents($this->fileName), true);
+//             $albums = array_filter($readFile, fn($album) => strcasecmp($album['author'], $author) === 0);
         
-            if ($albums) {
-                foreach ($albums as $album) {
-                    echo "Альбом: {$album['albumName']}" . "\n";
-                }
-            } 
-        }
-     }
+//             if ($albums) {
+//                 foreach ($albums as $album) {
+//                     echo "Альбом: {$album['albumName']}" . "\n";
+//                 }
+//             } 
+//         }
+//      }
 
 
 
-$album = new MusicCollection();
-// $album->addAlbum('Random Access Memories', 'Daft Punk', 2013, ['Give Life Back to Music', 'Instant Crush']);
-// $album->addAlbum('Discovery', 'Daft Punk', 2001, ['One More Time', 'Harder, Better, Faster, Stronger']);
-// $album->deleteAlbum('Discovery');
-$album->showAllalbums();
-// $album->addSongToAlbum('Discovery', 'Digital Love');
-// $album->addSongToAlbum('Random Access Memories', 'Contact');
-$album->findAlbumsByAuthor('Daft Punk');
+// $album = new MusicCollection();
+// // $album->addAlbum('Random Access Memories', 'Daft Punk', 2013, ['Give Life Back to Music', 'Instant Crush']);
+// // $album->addAlbum('Discovery', 'Daft Punk', 2001, ['One More Time', 'Harder, Better, Faster, Stronger']);
+// // $album->deleteAlbum('Discovery');
+// $album->showAllalbums();
+// // $album->addSongToAlbum('Discovery', 'Digital Love');-
+// // $album->addSongToAlbum('Random Access Memories', 'Contact');
+// $album->findAlbumsByAuthor('Daft Punk');
+
+
+
+echo "Hello";
